@@ -1,25 +1,19 @@
 #include <iostream>
 using namespace std;
-int gcd(int a, int b){
-	int num;
-	while(b > 0){
-		num = b;
-		b = a % b;
-		a = num;
-	}
-return a;
-}
-int main(){
-	int x, y, z;
-	int a[] = {x, y, z};
-	int N = 3;
-	int result = a[0];
-	cout <<  " please enter any three digits " << endl;
-	cin >> x >> y >> z;
-	for (int i = 1; i < N; i++){
-		result = gcd(result, a[i]);
-	}
-	cout << result << endl;
+int gcd(int a, int b)
+int main()
+{
+	int a, b;
+	cout <<  " please enter any two numbers to find the gcd of the numbers " << endl;
+	cin >> a >> b;
+	cout << " the gcd of " << a << " and " << b << " is " << gcd(a , b);
 	return 0;
+}
+int gcd(int a , int b)
+{
+	if ( b != 0)
+		return gcd (b, a % b);
+	else
+		return a;
 }
 
